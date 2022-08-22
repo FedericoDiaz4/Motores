@@ -1,0 +1,27 @@
+<h1 class="text-center">Productos Agregados.</h1>
+
+<% if (conProductos) { %>
+    <table class="table">
+        <thead class="table-secondary">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+            </tr>
+        </thead>
+        
+        <tbody class="table-secondary">
+            <% productos.forEach(prod => { %>
+            <tr>
+                <th scope="row"><%=prod.id %></th>
+                    <td><%=prod.title %></td>
+                    <td>$ <%=prod.price %></td>
+                    <td><img src=<%=prod.thumbnail %> alt="imagen producto" width="35"></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+<% } else{ %>
+    <h2 class="text-center">No hay productos.</h2>
+<% } %>
